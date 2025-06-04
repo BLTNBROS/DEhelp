@@ -1,0 +1,9 @@
+Package: DEhelp
+Title: Provide help in DE
+Version: 0.1.0
+Description: It carries important information about DE.
+Imports:
+    DescTools,
+    agricolae
+Encoding: UTF-8
+RoxygenNote: 7.3.2
