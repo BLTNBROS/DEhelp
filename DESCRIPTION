@@ -1,6 +1,10 @@
 Package: DEhelp
 Title: Provide help in DE
 Version: 0.1.0
+Authors@R: 
+    person("Fernando", "Santos", 
+           email = "fernando.asantosv@gmail.com",
+           role = c("aut", "cre"))
 Description: It carries important information about DE.
 Imports:
     DescTools,
