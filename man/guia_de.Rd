@@ -2,14 +2,16 @@
 % Please edit documentation in R/info.R
 \name{guia_de}
 \alias{guia_de}
-\title{Guía de Diseños Experimentales}
+\title{Fitting Linear Models}
 \description{
-Todas las fórmulas y pruebas estadísticas que necesitas.
+lm is used to fit linear models, including multivariate ones. It can be used to carry out regression, single stratum analysis of variance and analysis of covariance (although aov may provide a more convenient interface for these).
 }
 \details{
 \preformatted{
-# ===== COMPARACIONES MÚLTIPLES =====
-# Scheffe
+# res <- DescTools::ScheffeTest(aov(modelo), contrasts = matrix(c(1, 1, 1, -3), ncol = 1)) #Scheffe H0:Sumcimui=0 H1:Sumcimui!=0, sumci=0
+# medias <- tapply(datos$Y,datos$Trata,mean); ci <- c(1, 1, 1, -3) #cambiar; cme <- anova(modelo)[3,3]; 
+# L <- (sum(ci*medias)); SL <- sqrt(cme*sum(ci^2/b)); glT <- anova(modelo)[1,1]; gle <- anova(modelo)[3,1]; VCS <- SL*sqrt(glT*qf(1-alfa, glT, gle)) #RH0
+# Dunnett H0:mui=muT H1:mui!=muT para todo i!=T; DescTools::DunnettTest(datos$Y, datos$Trata, control = "A", conf.level = 1-alfa)
 res <- DescTools::ScheffeTest(aov(modelo), contrasts = matrix(c(1,1,1,-3), ncol=1))
 # H0: Sum(c_i*μ_i)=0 vs H1: Sum(c_i*μ_i)≠0, sum(c_i)=0
 
